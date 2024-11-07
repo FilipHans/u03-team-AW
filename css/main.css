@@ -87,14 +87,22 @@ main {
   align-items: center;
   justify-content: start;
   box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.2);
+  overflow: hidden;
 }
 
 .timer_inside {
-  width: 200px;
+  width: 100%;
   height: 30px;
-  border-radius: 50px;
   background: linear-gradient(90deg, rgb(161, 55, 55) 0%, rgb(235, 119, 69) 50%, hsl(29, 77%, 60%) 100%);
   /* background-color: hsl(29, 77%, 73%); */
+  animation-name: timing-bar;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+}
+
+@keyframes timing-bar{
+    from {width: 100%;}
+    to {width: 0%;}
 }
 
 .question_section {
@@ -157,3 +165,4 @@ main {
 .question_button:hover {
   background-color: hsl(29, 77%, 55%);
 }
+
