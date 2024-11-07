@@ -18,11 +18,17 @@ header {
   padding: 20px;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .start_section {
   border: 2px solid #000;
-  margin: 10vh;
+  margin: 5vh;
   padding: 1rem;
-  height: 400px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,14 +41,14 @@ header {
 .start_h2 {
   margin: 2rem 0rem;
   padding: 5px 25px;
-  background-color: rgb(143, 143, 207);
+  background-color: hsl(240, 40%, 70%);
   position: relative;
   right: 30px;
   box-shadow: 2px 2px 5px #000;
   color: #fff;
 }
 
-.start_input {
+.start_input{
   padding: 1rem;
   font-size: 1rem;
   border-radius: 5px;
@@ -50,11 +56,70 @@ header {
   margin-bottom: 2rem;
 }
 
-.start_button {
+.start_button{
   padding: 1rem 2rem;
   font-size: 1.5rem;
-  background-color: rgb(143, 143, 207);
+  background-color: hsl(240, 40%, 70%);
   border-radius: 5px;
   cursor: pointer;
   color: #fff;
+}
+
+.start_button:hover{
+    background-color: hsl(240, 40%, 65%);
+}
+
+.question_section {
+    border: 2px solid #000;
+    margin-top: 5vh;
+    padding: 2rem 1rem 3rem 1rem;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.2);
+}
+
+.question_h2 {
+    margin: 1rem 0rem;
+    padding: 5px 25px;
+    background-color: rgb(143, 143, 207);
+    position: relative;
+    right: 30px;
+    box-shadow: 2px 2px 5px #000;
+    color: #fff;
+  }
+
+.question{
+    background-color: rgba(238, 238, 238, 0.45);
+    width: 90%;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.question:hover{
+    background-color: rgba(238, 238, 238, 0.60);
+}
+
+.question_button{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    padding: 1rem 5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: hsl(29, 77%, 60%);
+    color: #fff;
+    box-shadow: 2px 2px 5px hsl(0, 0%, 0%);
+    border: none;
+    cursor: pointer;
+}
+
+.question_button:hover{
+    background-color: hsl(29, 77%, 55%);
 }
