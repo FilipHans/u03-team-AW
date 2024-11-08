@@ -4,6 +4,21 @@
     padding: 0;
 }
 
+:root {
+    --text-color: rgb(253, 216, 253);
+    --background-color-light: rgba(238, 197, 255, 0.159);
+    --background-color-dark: rgba(128, 0, 128, 0.204);
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 3;
+    }
+}
+
 .leaderboard-site {
     background: #3494E6;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
@@ -14,21 +29,22 @@
 .leaderboard-container {
     max-width: 50vw;
     height: auto;
-    background-color: rgba(238, 197, 255, 0.084);
+    background-color: var(--background-color-light);
     align-items: center;
     justify-content: center;
     margin: auto;
+    color: var(--text-color);
 }
 .top-3 {
-    background-color: rgba(128, 0, 128, 0.204);
+    background-color: var(--background-color-dark);
     padding: 1rem;
-    
 }
 .first {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fadein 2s ease-in 1s;
 }
 
 .second-third {
@@ -37,22 +53,28 @@
     text-align: center;
     justify-content: center;
 }
-
+.second {
+    animation: fadein 2s ease-in 2s;
+}
+.third {
+    animation: fadein 2s ease-in 3s;
+}
 .fourthPlace-andSoOn {
-    background-color: rgba(128, 0, 128, 0.204);
+    background-color: var(--background-color-dark);
 }
 .players-List {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 2rem;
-    border-top-left-radius: 7rem;
-    border-top-right-radius: 7rem;
-    background-color: rgba(238, 197, 255, 0.12);
+    padding: 2.5rem;
+    border-top-left-radius: 6rem;
+    border-top-right-radius: 6rem;
+    background-color: var(--background-color-light);
 }
 
 .top-players {
-    background-color: rgba(128, 0, 128, 0.269);
+    background-color: var(--background-color-dark);
     border-radius: 20px;
     padding: 0.5rem;
+    animation: fadein 2s ease-in 4s;
 }
