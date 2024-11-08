@@ -3,3 +3,56 @@
     margin: 0;
     padding: 0;
 }
+
+.leaderboard-site {
+    background: #3494E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: "poppins", serif;
+}
+
+.leaderboard-container {
+    max-width: 50vw;
+    height: auto;
+    background-color: rgba(238, 197, 255, 0.084);
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.top-3 {
+    background-color: rgba(128, 0, 128, 0.204);
+    padding: 1rem;
+    
+}
+.first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-third {
+    display: flex;
+    gap: 5rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.fourthPlace-andSoOn {
+    background-color: rgba(128, 0, 128, 0.204);
+}
+.players-List {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 2rem;
+    border-top-left-radius: 7rem;
+    border-top-right-radius: 7rem;
+    background-color: rgba(238, 197, 255, 0.12);
+}
+
+.top-players {
+    background-color: rgba(128, 0, 128, 0.269);
+    border-radius: 20px;
+    padding: 0.5rem;
+}
