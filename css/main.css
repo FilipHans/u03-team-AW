@@ -1,8 +1,81 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", serif;
+}
+
+:root {
+    --text-color: rgb(253, 216, 253);
+    --background-color-light: rgba(238, 197, 255, 0.241);
+    --background-color-dark: rgba(128, 0, 128, 0.204);
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 4;
+    }
+}
+body {
+    background: #3494E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.leaderboard-container {
+    max-width: 50vw;
+    height: auto;
+    background-color: var(--background-color-light);
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: var(--text-color);
+}
+.top-3 {
+    background-color: var(--background-color-dark);
+    padding: 1rem;
+}
+.first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadein 1s ease-in 1s;
+}
+
+.second-third {
+    display: flex;
+    gap: 5rem;
+    text-align: center;
+    justify-content: center;
+}
+.second {
+    animation: fadein 1s ease-in 2s;
+}
+.third {
+    animation: fadein 1s ease-in 3s;
+}
+.fourthPlace-andSoOn {
+    background-color: var(--background-color-dark);
+}
+.players-List {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 2.5rem;
+    border-top-left-radius: 6rem;
+    border-top-right-radius: 6rem;
+    background-color: var(--background-color-light);
+}
+
+.top-players {
+    background-color: var(--background-color-dark);
+    border-radius: 20px;
+    padding: 0.5rem;
+    animation: fadein 1s ease-in 4s;
 }
 
 body {
