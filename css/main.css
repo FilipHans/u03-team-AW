@@ -6,7 +6,7 @@
 
 :root {
     --text-color: rgb(253, 216, 253);
-    --background-color-light: rgba(238, 197, 255, 0.159);
+    --background-color-light: rgba(238, 197, 255, 0.241);
     --background-color-dark: rgba(128, 0, 128, 0.204);
 }
 
@@ -15,7 +15,7 @@
         opacity: 0;
     }
     to {
-        opacity: 3;
+        opacity: 4;
     }
 }
 
@@ -44,7 +44,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: fadein 2s ease-in 1s;
+    animation: fadein 1s ease-in 1s;
 }
 
 .second-third {
@@ -54,10 +54,10 @@
     justify-content: center;
 }
 .second {
-    animation: fadein 2s ease-in 2s;
+    animation: fadein 1s ease-in 2s;
 }
 .third {
-    animation: fadein 2s ease-in 3s;
+    animation: fadein 1s ease-in 3s;
 }
 .fourthPlace-andSoOn {
     background-color: var(--background-color-dark);
@@ -76,5 +76,5 @@
     background-color: var(--background-color-dark);
     border-radius: 20px;
     padding: 0.5rem;
-    animation: fadein 2s ease-in 4s;
+    animation: fadein 1s ease-in 4s;
 }
