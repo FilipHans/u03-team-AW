@@ -238,3 +238,50 @@ main {
 .question_button:hover {
   background-color: hsl(29, 77%, 55%);
 }
+
+
+
+
+/* emils css */
+.emilsbilder{
+  width: 130px;
+  border-bottom: 1px solid black;
+  }
+  
+  .allcards{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 400px;
+  gap: 20px;
+  height: 500px;
+  margin: 100px 110px 0;
+  
+  
+  
+  }
+  
+  .cardoneandtwo, .cardtwoandfour{
+      border: 1px solid black;
+      border-radius: 10%;
+      
+      
+  }
+  
+  .hej{
+      display: flex;
+      justify-content: center;
+      
+  }
+  
+  .cardtwoandfour{
+      position: relative;
+      
+  }
+  
+  .cardoneandtwo{
+  position: relative;
+  bottom: 50px;
+  }

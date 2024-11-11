@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <title>My page</title>
 </head>
 <body>
@@ -13,14 +13,93 @@
     </header>
 
     <main>
-
+    <!-- first del -->
     <section class="start_section">
-        <h2 class="start_h2">Welcome to Quiz App</h2>
-        <input type="text" placeholder="Enter your name" class="start_input">
-        <button class="start_button">ok</button>
+        <form class="name_form">
+            <h2 class="start_h2">Welcome to Quiz App</h2>
+            <input type="text" placeholder="Enter your name" class="start_input">
+            <button class="start_button" type="submit"><a href="questions.html">ok</a></button>
+        </form>
     </section>
 
 
+    <!-- cato delen -->
+    <section class="allcards">
+        <div class="cardoneandtwo">
+          <img
+            class="emilsbilder"
+            src="./img/geography-svgrepo-com.svg"
+            alt="East"
+          />
+          <p class="hej">Geography</p>
+        </div>
+  
+        <div class="cardoneandtwo">
+          <img
+            class="emilsbilder"
+            src="./img/movies-svgrepo-com.svg"
+            alt="Medium"
+          />
+          <p class="hej">Movies</p>
+        </div>
+  
+        <div class="cardtwoandfour">
+          <img class="emilsbilder" src="./img/music-svgrepo-com.svg" alt="Hard" />
+          <p class="hej">Music</p>
+        </div>
+  
+        <div class="cardtwoandfour">
+          <img
+            class="emilsbilder"
+            src="./img/random-svgrepo-com.svg"
+            alt="Medium"
+          />
+          <p class="hej">Random</p>
+        </div>
+      </section>
+
+
+      <!-- emil delen -->
+      <section class="allcards">
+
+        <div class="cardoneandtwo">
+        <img class="" src="./img/chicken-2-svgrepo-com.svg" alt="East">
+        <p class="hej">Easy</p>
+        </div>
+        
+        <div class="cardoneandtwo">
+          <img src="./img/wolf-head-svgrepo-com.svg" alt="Medium">
+          <p class="hej">Medium</p>
+          </div>
+          
+          <div class="cardtwoandfour">
+            <img src="./img/bear-facing-right-svgrepo-com.svg" alt="Hard">
+            <p class="hej">Hard</p>
+            </div>
+            
+            <div class="cardtwoandfour">
+              <img src="./img/dinosaur-1-svgrepo-com.svg" alt="Medium">
+              <p class="hej">Expert</p>
+              </div>
+        
+        
+        
+        </section>
+
+        <!-- questions delen -->
+        <h2 class="question_counter">Question 10/11</h2>
+        <div class="timer"><div class="timer_inside"></div></div>
+
+    <section class="question_section">
+        <h2 class="question_h2">Vilken är Lars Winnerbäcks bästa låt?</h2>
+        <ul class="question">
+            <li>Tror jag hittar hem</li>
+            <li>Känns så längesen</li>
+            <li>Elegi</li>
+            <li>Själ och hjärta</li>
+        </ul>  
+    </section>
+    <button class="question_button">Next</button>
     </main>
 </body>
 </html>
