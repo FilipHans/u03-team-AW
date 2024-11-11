@@ -3,7 +3,13 @@ const inputBtn = document.querySelector(".start_button");
 const userForm = document.querySelector(".name_form")
 const category = document.querySelector(".allcards")
 const firstSection = document.querySelector(".start_section");
-const categoryBox = document.querySelectorAll(".categorybox")
+const geographyCategory = document.querySelector(".geography")
+const moviesCategory = document.querySelector(".movies")
+const musicCategory = document.querySelector(".music")
+const randomCategory = document.querySelector(".random")
+
+
+let categorychoice = "";
 
 userForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -15,9 +21,13 @@ userForm.addEventListener("submit", (event) => {
     
 });
 
-categoryBox.forEach((element) => {
-element.addEventListener("click", function (){
-   
-})    
-})
 
+geographyCategory.addEventListener("click", function (event){
+    categorychoice = "1";  
+    console.log(categorychoice); 
+})    
+
+moviesCategory.addEventListener("click", function (event){
+    categorychoice = "2";  
+    console.log(categorychoice); 
+})  
