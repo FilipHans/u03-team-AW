@@ -1,127 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js" defer></script>
-    <title>My page</title>
-</head>
-<body>
-    <header>
-        <h1>Quizzy</h1>
-    </header>
 
-    <main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script type="module" src="js/main.js" defer></script>
+  <title>My page</title>
+</head>
+
+<body>
+  <header>
+    <h1>Quizzy</h1>
+  </header>
+
+  <main>
     <!-- first del -->
     <section class="start_section">
-        <form class="name_form">
-            <h2 class="start_h2">Welcome to Quiz App</h2>
-            <input type="text" placeholder="Enter your name" class="start_input">
-            <button class="start_button" type="submit">ok</button>
-        </form>
+      <form class="name_form">
+        <h2 class="start_h2">Welcome to Quizzy</h2>
+        <input type="text" placeholder="Enter your name" class="start_input" />
+        <button class="start_button" type="submit">ok</button>
+      </form>
     </section>
-
 
     <!-- cato delen -->
     <section class="allcards">
-        <div class="cardoneandtwo geography">
-          <img
-            class="emilsbilder" 
-            src="./img/geography-svgrepo-com.svg"
-            alt="East"
-          />
-          <p class="hej">Geography</p>
-        </div>
-  
-        <div class="cardoneandtwo movies">
-          <img
-            class="emilsbilder"
-            src="./img/movies-svgrepo-com.svg"
-            alt="Medium"
-          />
-          <p class="hej">Movies</p>
-        </div>
-  
-        <div class="cardtwoandfour music">
-          <img class="emilsbilder" src="./img/music-svgrepo-com.svg" alt="Hard" />
-          <p class="hej">Music</p>
-        </div>
-  
-        <div class="cardtwoandfour random">
-          <img
-            class="emilsbilder"
-            src="./img/random-svgrepo-com.svg"
-            alt="Medium"
-          />
-          <p class="hej">Random</p>
-        </div>
-      </section>
+      <div class="cardoneandtwo geography">
+        <img class="emilsbilder" src="./img/geography-svgrepo-com.svg" alt="East" />
+        <p class="hej">Geography</p>
+      </div>
 
+      <div class="cardoneandtwo movies">
+        <img class="emilsbilder" src="./img/movies-svgrepo-com.svg" alt="Medium" />
+        <p class="hej">Movies</p>
+      </div>
 
-      <!-- emil delen -->
-      <section class="difficultlevel">
+      <div class="cardtwoandfour music">
+        <img class="emilsbilder" src="./img/music-svgrepo-com.svg" alt="Hard" />
+        <p class="hej">Music</p>
+      </div>
 
-        <div class="cardoneandtwo easy">
-        <img class="emilsbilder" src="./img/chicken-2-svgrepo-com.svg" alt="East">
-        <p class="hej">Easy</p>
-        </div>
-        
-        <div class="cardoneandtwo medium">
-          <img class="emilsbilder" src="./img/wolf-head-svgrepo-com.svg" alt="Medium">
-          <p class="hej">Medium</p>
-          </div>
-          
-          <div class="cardtwoandfour hard">
-            <img class="emilsbilder" src="./img/bear-facing-right-svgrepo-com.svg" alt="Hard">
-            <p class="hej">Hard</p>
-          </div>
-        </section>
-
-        <!-- questions delen -->
-        <div class="questiondiv">
-        <h2 class="question_counter">Question 10/11</h2>
-        <div class="timer"><div class="timer_inside"></div></div>
-
-    <section class="question_section">
-        <h2 class="question_h2"></h2>
-        <ul class="question"></ul>  
+      <div class="cardtwoandfour random">
+        <img class="emilsbilder" src="./img/random-svgrepo-com.svg" alt="Medium" />
+        <p class="hej">Random</p>
+      </div>
     </section>
-    <button class="question_button">Next</button>
-  </div>
-    
+
+    <!-- emil delen -->
+    <section class="difficultlevel">
+      <div class="cardoneandtwo easy">
+        <img class="emilsbilder" src="./img/chicken-2-svgrepo-com.svg" alt="East" />
+        <p class="hej">Easy</p>
+      </div>
+
+      <div class="cardoneandtwo medium">
+        <img class="emilsbilder" src="./img/wolf-head-svgrepo-com.svg" alt="Medium" />
+        <p class="hej">Medium</p>
+      </div>
+
+      <div class="cardtwoandfour hard">
+        <img class="emilsbilder" src="./img/bear-facing-right-svgrepo-com.svg" alt="Hard" />
+        <p class="hej">Hard</p>
+      </div>
+    </section>
+
+    <!-- questions delen -->
+    <div class="questiondiv">
+      <h2 class="question_counter">Question 1/10</h2>
+      <div class="timeOut">
+        <div class="timer"></div>
+        </div>
+      <section class="question_section">
+        <h2 class="question_h2"></h2>
+        <ul class="question"></ul>
+      </section>
+      <button class="question_button">Next</button>
+    </div>
+
     <!-- hannas del -->
 
     <section class="leaderboard-container">
       <article class="leaderboard">
-          <div class="top-3">
-              <div class="first">
-                  <img src="./img/top1.png" alt="1st place">
-                  <p></p>
-              </div>
-              <div class="second-third">
-                  <div class="second">
-                      <img class ="image-container" src="./img/top2.png" alt="2nd place">
-                      <p></p>
-                  </div>
-                  <div class="third">
-                      <img src="./img/top3.png" alt="2nd place">
-                      <p></p>
-                  </div>
-              </div>
+        <div class="top-3">
+          <div class="first">
+            <img src="./img/top1.png" alt="1st place" />
+            <p></p>
           </div>
+          <div class="second-third">
+            <div class="second">
+              <img class="image-container" src="./img/top2.png" alt="2nd place" />
+              <p></p>
+            </div>
+            <div class="third">
+              <img src="./img/top3.png" alt="2nd place" />
+              <p></p>
+            </div>
+          </div>
+        </div>
 
-          <article class="fourthPlace-andSoOn">
-              <div class="players-List"></div>    
-          </article>
-
+        <article class="fourthPlace-andSoOn">
+          <div class="players-List"></div>
+        </article>
       </article>
-
-  </section>
-
-    </main>
+    </section>
+  </main>
 </body>
+
 </html>
