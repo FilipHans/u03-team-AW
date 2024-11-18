@@ -27,6 +27,7 @@ const timeOut = document.querySelector(".timeOut");
 
 import { shuffle } from "./shuffle.js";
 import { createBar } from "./createBar.js";
+import {start, end} from "./timer.js";
 
 let categoryChoice = "";
 let difficulty = "";
@@ -68,18 +69,24 @@ randomCategory.addEventListener("click", () => {
 easy.addEventListener("click", () => {
     difficultyPoints = 1000;
     difficulty = "easy";
+
+    start();
     createBar();
     runner(categoryChoice, difficulty);
 });
 medium.addEventListener("click", () => {
     difficultyPoints = 1500;
     difficulty = "medium";
+
+    start();
     createBar();
     runner(categoryChoice, difficulty);
 });
 hard.addEventListener("click", () => {
     difficultyPoints = 2000;
     difficulty = "hard";
+
+    start();
     createBar();
     runner(categoryChoice, difficulty);
 });
@@ -118,24 +125,13 @@ async function runner(categoryChoice, difficulty) {
 
 function quizDisplay(data) {
     const stringedData = JSON.stringify(data);
-    const parsedData = stringedData
-        .replace(/&atilde;/g, "ã")
-        .replace(/&oacute/g, "ó")
-        .replace(/&Uuml;/g, "Ü")
-        .replace(/&Eacute;/g, "É")
-        .replace(/&iacute;/g, "í")
-        .replace(/&quot;/g, "")
-        .replace(/&#039;/g, "'")
-        .replace(/&ldquo;/g, "'")
-        .replace(/&rsquo;/g, "'")
-        .replace(/&amp;/g, "&")
-        .replace(/&lrm;/g, "")
-        .replace(/&rdquo;/g, "'")
-        .replace(/&ouml;/g, "ö");
+
     const processedData = JSON.parse(parsedData);
 
     question.textContent = processedData[roundTracker].question;
     const correctAnswer = processedData[roundTracker].correct_answer;
+
+    correctAnswer = answerDecoder(correctAnswer);
 
     questionCounter.textContent = `Question ${roundTracker + 1}/10`;
 
@@ -196,4 +192,14 @@ function quizDisplay(data) {
             }
         }
     }
+}
+
+function answerDecoder (answer) {
+
+    const divDecoder = document.createElement('div');
+    divDecoder.innerHTML = answer;
+
+    const newAnswer = divDecoder.innerHTML;
+    
+    return newAnswer;
 }
