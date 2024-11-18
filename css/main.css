@@ -33,6 +33,7 @@ body {
     justify-content: center;
     margin: auto;
     color: var(--text-color);
+    display: none;
 }
 .top-3 {
     background-color: var(--background-color-dark);
@@ -109,6 +110,7 @@ main {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.2);
+  
 }
 
 .start_h2 {
@@ -147,6 +149,10 @@ main {
   font-size: 2rem;
   text-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.6);
   margin-bottom: 1rem;
+}
+
+.questiondiv{
+  display: none;
 }
 
 .timer {
@@ -206,7 +212,7 @@ main {
   width: 100%;
 }
 
-.question li {
+.answerBox {
   background-color: rgba(238, 238, 238, 0.45);
   /* width: 90%; */
   font-size: 1.5rem;
@@ -217,7 +223,7 @@ main {
   margin: 1rem;
 }
 
-.question li:hover {
+.answerBox:hover {
   background-color: rgba(238, 238, 238, 0.6);
 }
 
@@ -238,3 +244,69 @@ main {
 .question_button:hover {
   background-color: hsl(29, 77%, 55%);
 }
+
+
+/* emils css */
+.emilsbilder{
+  width: 130px;
+  border-bottom: 1px solid black;
+  }
+  
+  .allcards{
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 400px;
+  gap: 20px;
+  height: 500px;
+  margin: 100px 110px 0;
+  
+  }
+
+    .difficultlevel{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 400px;
+    gap: 20px;
+    height: 500px;
+    margin: 100px 110px 0;
+    
+    
+    
+    }
+  
+  .cardoneandtwo, .cardtwoandfour{
+      border: 1px solid black;
+      border-radius: 10%;
+      
+      
+  }
+  
+  .hej{
+      display: flex;
+      justify-content: center;
+      
+  }
+  
+  .cardtwoandfour{
+      position: relative;
+      
+  }
+  
+  .cardoneandtwo{
+  position: relative;
+  bottom: 50px;
+  }
+
+  .newOpacity {
+    opacity: 65%;
+    border: 1px solid black;
+  }
+  .highOpacity {
+    opacity: 100%;
+  }
