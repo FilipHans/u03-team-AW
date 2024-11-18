@@ -103,7 +103,9 @@ questionBtn.addEventListener("click", () => {
     else {
         const endTime = end();
         console.log(endTime)
-        pointsTracker = pointsTracker / endTime;
+        pointsTracker = Math.floor(pointsTracker / endTime);
+        localStorage.setItem('points', pointsTracker)
+        console.log(pointsTracker);
         questionDiv.style.display = 'none';
         category.style.display = 'flex';
     }
@@ -209,7 +211,7 @@ colorizer(newLiList, correctAnswer);
         console.log(`${correctAnswer} is correct!`);
         pointsTracker += difficultyPoints;
     } else {
-    console.log(`Filip > Emil!`);
+        console.log(`Filip > Emil!`);
     }
 }
 }
