@@ -26,7 +26,7 @@ const timeOut = document.querySelector(".timeOut");
 
 
 import { shuffle } from "./shuffle.js";
-import { createBar, barTimer } from "./createBar.js";
+import { createBar} from "./createBar.js";
 import {start, end} from "./timer.js";
 
 let categoryChoice = "";
@@ -169,7 +169,9 @@ function quizDisplay(data) {
 
     liList.forEach((element) => {
         element.addEventListener("click", (event) => {
+
             produceResult(element, event, correctAnswer, randomizer)
+
         });
     });
 
@@ -187,7 +189,8 @@ function colorizer(newLiList, correctAnswer) {
 }
 
 function produceResult (element, event, correctAnswer, randomizer) {
-    clearTimeout(barTimer);
+    // clearTimeout(barTimer);
+    timeOut.innerHTML = ``;
     questionBtn.disabled = false;
 
     clearTimeout(myTimer);
@@ -219,9 +222,10 @@ colorizer(newLiList, correctAnswer);
 function slowPoke (element, event, answer, randomizer) {
 
     timer.classList.remove("timer");
-    timer.innerHTML = `<h2>Too slow!</h2>`
 
     produceResult(element, event, answer, randomizer)
+    timeOut.innerHTML = `<h2>Too slow!</h2>`
+
 
 }
 
