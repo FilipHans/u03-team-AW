@@ -11,14 +11,6 @@
     --background-color-dark: rgba(128, 0, 128, 0.204);
 }
 
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 4;
-    }
-}
 body {
     background: #3494E6;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
@@ -45,7 +37,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* animation: fadein 1s ease-in 1s; */
 }
 
 .second-third {
@@ -53,14 +44,8 @@ body {
     gap: 3rem;
     text-align: center;
     justify-content: center;
-    
 }
-/* .second {
-    animation: fadein 1s ease-in 2s;
-}
-.third {
-    animation: fadein 1s ease-in 3s;
-} */
+
 .fourthPlace-andSoOn {
     background-color: var(--background-color-dark);
 }
@@ -79,18 +64,15 @@ body {
     border-radius: 20px;
     padding: 0.5rem;
     text-align: center;
-    /* animation: fadein 1s ease-in 4s; */
 }
 
 @media (min-width: 768px) {
-    
     .second-third {
       gap: 5rem;
     }
   
 }
 @media (min-width: 1024px) {
-
   .second-third {
     gap: 7rem;
   }
