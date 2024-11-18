@@ -23,6 +23,8 @@ const answers = document.querySelector(".question");
 const timer = document.querySelector(".timer");
 const timeOut = document.querySelector(".timeOut");
 
+const desktopVersion = document.querySelector(".desktop_version");
+
 
 
 import { shuffle } from "./shuffle.js";
@@ -128,6 +130,7 @@ async function quizGetter(categoryChoice, difficulty) {
 }
 
 async function runner(categoryChoice, difficulty) {
+    desktopVersion.style.display = "none";
     difficultyLevel.style.display = "none";
     questionDiv.style.display = "flex";
 
