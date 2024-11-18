@@ -1,4 +1,6 @@
 const inputName = document.querySelector(".start_input");
+const startBtn = document.querySelector(".start_button");
+const startInput = document.querySelector(".start_input");
 
 const userForm = document.querySelector(".name_form");
 const category = document.querySelector(".allcards");
@@ -38,6 +40,14 @@ let quizData;
 let pointsTracker = 0;
 let difficultyPoints;
 let myTimer;
+
+startInput.addEventListener("keyup", () => {
+    if (startInput.value.length > 0) {
+        startBtn.disabled = false;
+    } else {
+        startBtn.disabled = true;
+    }
+})
 
 userForm.addEventListener("submit", (event) => {
     event.preventDefault();
