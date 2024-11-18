@@ -189,7 +189,6 @@ function colorizer(newLiList, correctAnswer) {
 }
 
 function produceResult (element, event, correctAnswer, randomizer) {
-    // clearTimeout(barTimer);
     timeOut.innerHTML = ``;
     questionBtn.disabled = false;
 
