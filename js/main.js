@@ -26,7 +26,7 @@ const timeOut = document.querySelector(".timeOut");
 
 
 import { shuffle } from "./shuffle.js";
-import { createBar } from "./createBar.js";
+import { createBar, barTimer } from "./createBar.js";
 import {start, end} from "./timer.js";
 
 let categoryChoice = "";
@@ -35,6 +35,7 @@ let roundTracker = 0;
 let quizData;
 let pointsTracker = 0;
 let difficultyPoints;
+let myTimer;
 
 userForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -92,11 +93,20 @@ hard.addEventListener("click", () => {
 });
 
 questionBtn.addEventListener("click", () => {
+
+    if (roundTracker < 9) {
     roundTracker++;
     timeOut.innerHTML = '<div class="timer"><div class="timer_inside"></div></div>'
-
     createBar();
     quizDisplay(quizData.results);
+    }
+    else {
+        const endTime = end();
+        console.log(endTime)
+        pointsTracker = pointsTracker / endTime;
+        questionDiv.style.display = 'none';
+        category.style.display = 'flex';
+    }
     
 });
 
@@ -124,12 +134,11 @@ async function runner(categoryChoice, difficulty) {
 }
 
 function quizDisplay(data) {
-    const stringedData = JSON.stringify(data);
+    questionBtn.disabled = true;
+    const processedData = data;
 
-    const processedData = JSON.parse(parsedData);
-
-    question.textContent = processedData[roundTracker].question;
-    const correctAnswer = processedData[roundTracker].correct_answer;
+    question.innerHTML = processedData[roundTracker].question;
+    let correctAnswer = processedData[roundTracker].correct_answer;
 
     correctAnswer = answerDecoder(correctAnswer);
 
@@ -151,47 +160,67 @@ function quizDisplay(data) {
                         <li class="answerBox">${randomizer[3]}</li>
                         `;
 
+    myTimer = setTimeout(() => {
+        slowPoke('not', 'not', correctAnswer, randomizer)
+    }, 10000)
     const liList = document.querySelectorAll(".answerBox");
 
     liList.forEach((element) => {
         element.addEventListener("click", (event) => {
-            answers.innerHTML = `
-                            <li class="answerBox box1">${randomizer[0]}</li>
-                            <li class="answerBox box1">${randomizer[1]}</li>
-                            <li class="answerBox box1">${randomizer[2]}</li>
-                            <li class="answerBox box1">${randomizer[3]}</li>
-                            `;
-            const newLiList = document.querySelectorAll(".answerBox");
-
-            for (let i = 0; i < newLiList.length; i++) {
-                if (newLiList[i].textContent === element.textContent) {
-                    newLiList[i].classList.add("highOpacity");
-                }
-            }
-
-            colorizer(newLiList);
-
-            if (event.target.textContent === correctAnswer) {
-                console.log(`${correctAnswer} is correct!`);
-                pointsTracker += difficultyPoints;
-            } else {
-                console.log(`Filip > Emil!`);
-            }
+            produceResult(element, event, correctAnswer, randomizer)
         });
     });
 
-    console.log(pointsTracker);
-
-    function colorizer(newLiList) {
-        for (let i = 0; i < newLiList.length; i++) {
-            newLiList[i].classList.add("newOpacity");
-            if (newLiList[i].textContent === correctAnswer) {
-                newLiList[i].style.background = "green";
-            } else {
-                newLiList[i].style.background = "red";
-            }
+}
+function colorizer(newLiList, correctAnswer) {
+    for (let i = 0; i < newLiList.length; i++) {
+        
+        newLiList[i].classList.add("newOpacity");
+        if (newLiList[i].textContent === correctAnswer) {
+            newLiList[i].style.background = "green";
+        } else {
+            newLiList[i].style.background = "red";
         }
     }
+}
+
+function produceResult (element, event, correctAnswer, randomizer) {
+    clearTimeout(barTimer);
+    questionBtn.disabled = false;
+
+    clearTimeout(myTimer);
+    answers.innerHTML = `
+                        <li class="answerBox box1">${randomizer[0]}</li>
+                        <li class="answerBox box1">${randomizer[1]}</li>
+                        <li class="answerBox box1">${randomizer[2]}</li>
+                        <li class="answerBox box1">${randomizer[3]}</li>
+    `;
+    const newLiList = document.querySelectorAll(".answerBox");
+
+    for (let i = 0; i < newLiList.length; i++) {
+        if (newLiList[i].textContent === element.textContent) {
+            newLiList[i].classList.add("highOpacity");
+        }
+    }
+
+colorizer(newLiList, correctAnswer);
+    if (event !== "not") {
+    if (event.target.textContent === correctAnswer) {
+        console.log(`${correctAnswer} is correct!`);
+        pointsTracker += difficultyPoints;
+    } else {
+    console.log(`Filip > Emil!`);
+    }
+}
+}
+
+function slowPoke (element, event, answer, randomizer) {
+
+    timer.classList.remove("timer");
+    timer.innerHTML = `<h2>Too slow!</h2>`
+
+    produceResult(element, event, answer, randomizer)
+
 }
 
 function answerDecoder (answer) {

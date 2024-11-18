@@ -1,10 +1,10 @@
 const timer = document.querySelector(".timer");
 const timeOut = document.querySelector(".timeOut");
-
+export let barTimer;
 
 export function createBar() {
     timer.innerHTML = `<div class="timer_inside"></div>`;
-    setTimeout( () => {
+    barTimer = setTimeout( () => {
 
         timeOut.textContent = "To slow!";
         console.log("to slow")
