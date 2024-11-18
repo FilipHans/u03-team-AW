@@ -129,7 +129,7 @@ async function quizGetter(categoryChoice, difficulty) {
 
 async function runner(categoryChoice, difficulty) {
     difficultyLevel.style.display = "none";
-    questionDiv.style.display = "inline";
+    questionDiv.style.display = "flex";
 
     quizData = await quizGetter(categoryChoice, difficulty);
     quizDisplay(quizData.results);
