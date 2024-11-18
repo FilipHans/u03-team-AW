@@ -26,7 +26,8 @@ body {
 }
 
 .leaderboard-container {
-    width: 50vw;
+    width: 80vw;
+    max-width: 600px;
     height: auto;
     background-color: var(--background-color-light);
     align-items: center;
@@ -82,18 +83,14 @@ body {
 }
 
 @media (min-width: 768px) {
-    .leaderboard-container {
-      width: 60vw;
-    }
+    
     .second-third {
       gap: 5rem;
     }
   
 }
 @media (min-width: 1024px) {
-  .leaderboard-container {
-    width: 70vw;
-  }
+
   .second-third {
     gap: 7rem;
   }
