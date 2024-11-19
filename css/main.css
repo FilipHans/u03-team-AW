@@ -278,46 +278,13 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    width: 304px;
-    background-color: #EC6EAD;
+    width: 307px;
+    /* background-color: #3494E6; */
   }
 
   .difficultlevel .allcardsDiv{
     justify-content: flex-start;
   }
-
-  /* .difficultlevelDiv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    width: 375px;
-    height: 500px;
-    background-color: #fff;
-  } */
-
-  /* .difficultlevel{
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 400px;
-    gap: 20px;
-    height: 500px;
-    margin: 100px 110px 0;
-    background-color: #fff;
-    } */
-
-  /* .diffH2{
-    display: none;
-   }
-
-   .catoH2{
-    display: none;
-   } */
 
    .catoH2, .diffH2{
      display: none;
@@ -342,15 +309,11 @@ main {
     top: 50px;
   }
 
- 
-  
   .cardoneandtwo, .cardtwoandfour, .cardbear{
-      border: 1px solid black;
+      border: 2px solid black;
       border-radius: 10%;
-      /* background-color: rgba(255, 255, 255, 0.24); */
       background-color: white;
       cursor: pointer;  
-      /* background-color: #3494E6; */
   }
 
   .cardtwoandfour:hover, .cardoneandtwo:hover, .cardbear:hover{
@@ -361,14 +324,6 @@ main {
   position: relative;
     top: 50px;
 }
-
-  /* .cardbear{
-    border: 1px solid black;
-      border-radius: 10%;
-       background-color: rgba(255, 255, 255, 0.24);
-      background-color: white;
-      cursor: pointer;
-  } */
  
   .catoP{
       display: flex;
