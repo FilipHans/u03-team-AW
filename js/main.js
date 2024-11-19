@@ -23,6 +23,10 @@ const answers = document.querySelector(".question");
 const timer = document.querySelector(".timer");
 const timeOut = document.querySelector(".timeOut");
 
+const catoH2 = document.querySelector(".catoH2");
+const diffH2 = document.querySelector(".diffH2");
+
+
 const desktopVersion = document.querySelector(".desktop_version");
 
 
@@ -42,31 +46,40 @@ let myTimer;
 userForm.addEventListener("submit", (event) => {
     event.preventDefault();
     localStorage.setItem("name", inputName.value);
-
     firstSection.style.display = "none";
     category.style.display = "flex";
+    catoH2.style.display = "flex";
+    
 });
 
 geographyCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "22";
+    catoH2.style.display = "none";
+    diffH2.style.display = "flex";
 });
 
 moviesCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "11";
+    catoH2.style.display = "none";
+
 });
 musicCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "12";
+    catoH2.style.display = "none";
+
 });
 randomCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "0";
+    catoH2.style.display = "none";
+
 });
 
 easy.addEventListener("click", () => {
@@ -76,6 +89,8 @@ easy.addEventListener("click", () => {
     start();
     createBar();
     runner(categoryChoice, difficulty);
+    diffH2.style.display = "none";
+
 });
 medium.addEventListener("click", () => {
     difficultyPoints = 1500;
@@ -84,6 +99,8 @@ medium.addEventListener("click", () => {
     start();
     createBar();
     runner(categoryChoice, difficulty);
+    diffH2.style.display = "none";
+
 });
 hard.addEventListener("click", () => {
     difficultyPoints = 2000;
@@ -92,6 +109,8 @@ hard.addEventListener("click", () => {
     start();
     createBar();
     runner(categoryChoice, difficulty);
+    diffH2.style.display = "none";
+
 });
 
 questionBtn.addEventListener("click", () => {

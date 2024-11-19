@@ -15,7 +15,8 @@ body {
     background: #3494E6;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+  }
+
 
 .leaderboard-container {
     width: 80vw;
@@ -264,9 +265,19 @@ main {
 
 
 /* emils css */
-.emilsbilder{
+
+.diffH2{
+ display: none;
+}
+.catoH2{
+  display: none;
+  margin-top: 60px;
+}
+.catoanddiffpic{
   width: 130px;
   border-bottom: 1px solid black;
+  height: auto;
+  
   }
   
   .allcards{
@@ -275,12 +286,28 @@ main {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  width: 400px;
+  width: 375px;
   gap: 20px;
   height: 500px;
-  margin: 100px 110px 0;
+  
+  
   
   }
+   
+  .allcards :hover{
+    background-color: rgba(28, 238, 238, 0.6);
+    border-radius: 10%;
+  }
+  .difficultlevel :hover{
+    /* background-color: rgba(28, 238, 238, 0.6);
+    border-radius: 10%; */
+  }
+
+  .catoP:hover{
+    /* object-fit: cover; */
+    
+  }
+  
 
     .difficultlevel{
     display: none;
@@ -300,19 +327,53 @@ main {
   .cardoneandtwo, .cardtwoandfour{
       border: 1px solid black;
       border-radius: 10%;
+      /* background-color: rgba(255, 255, 255, 0.24); */
+      background-color: white;
+      cursor: pointer;
       
       
   }
+  .cardbear{
+    border: 1px solid black;
+      border-radius: 10%;
+      /* background-color: rgba(255, 255, 255, 0.24); */
+      background-color: white;
+      cursor: pointer;
+      position: relative;
+      bottom: 40px;
+  }
+ 
+
   
-  .hej{
+  
+  .catoP{
       display: flex;
       justify-content: center;
-      
+      width: 100%;
+     
+  }
+  
+
+  .randompic{
+    width: 130px;
+    border-bottom: 1px solid black;
+    padding: 10px;
+  }
+  .bearpic{
+    width: 130px;
+    border-bottom: 1px solid black;
+    padding: 9px;
+    
+  }
+  .chickenpic{
+    width: 130px;
+    border-bottom: 1px solid black;
+    padding: 10px;
   }
   
   .cardtwoandfour{
       position: relative;
-      
+      /* bottom: 40px; */
   }
   
   .cardoneandtwo{
