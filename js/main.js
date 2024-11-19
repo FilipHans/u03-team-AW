@@ -65,6 +65,7 @@ moviesCategory.addEventListener("click", () => {
     category.style.display = "none";
     categoryChoice = "11";
     catoH2.style.display = "none";
+    diffH2.style.display = "flex";
 
 });
 musicCategory.addEventListener("click", () => {
@@ -72,6 +73,7 @@ musicCategory.addEventListener("click", () => {
     category.style.display = "none";
     categoryChoice = "12";
     catoH2.style.display = "none";
+    diffH2.style.display = "flex";
 
 });
 randomCategory.addEventListener("click", () => {
@@ -79,6 +81,7 @@ randomCategory.addEventListener("click", () => {
     category.style.display = "none";
     categoryChoice = "0";
     catoH2.style.display = "none";
+    diffH2.style.display = "flex";
 
 });
 

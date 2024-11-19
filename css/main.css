@@ -266,50 +266,39 @@ main {
 
 /* emils css */
 
-.diffH2{
- display: none;
-}
-.catoH2{
-  display: none;
-  margin-top: 60px;
-}
-.catoanddiffpic{
-  width: 130px;
-  border-bottom: 1px solid black;
-  height: auto;
-  
-  }
-  
-  .allcards{
+  .allcards, .difficultlevel{
   display: none;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  width: 375px;
-  gap: 20px;
-  height: 500px;
-  
-  
-  
-  }
-   
-  .allcards :hover{
-    background-color: rgba(28, 238, 238, 0.6);
-    border-radius: 10%;
-  }
-  .difficultlevel :hover{
-    /* background-color: rgba(28, 238, 238, 0.6);
-    border-radius: 10%; */
   }
 
-  .catoP:hover{
-    /* object-fit: cover; */
-    
+  .allcardsDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 304px;
+    background-color: #EC6EAD;
   }
-  
 
-    .difficultlevel{
+  .difficultlevel .allcardsDiv{
+    justify-content: flex-start;
+  }
+
+  /* .difficultlevelDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 375px;
+    height: 500px;
+    background-color: #fff;
+  } */
+
+  /* .difficultlevel{
     display: none;
     justify-content: center;
     flex-direction: column;
@@ -319,46 +308,74 @@ main {
     gap: 20px;
     height: 500px;
     margin: 100px 110px 0;
-    
-    
-    
+    background-color: #fff;
+    } */
+
+  /* .diffH2{
+    display: none;
+   }
+
+   .catoH2{
+    display: none;
+   } */
+
+   .catoH2, .diffH2{
+     display: none;
+     margin-top: 5vh;
+     margin-bottom: 2rem;
+   }
+
+   .catoanddiffpic{
+     width: 130px;
+     border-bottom: 1px solid black;
+     height: auto;
+     }
+
+     .randompic{
+      width: 130px;
+      border-bottom: 1px solid black;
+      padding: 10px;
     }
+
+  .movies, .random{
+    position: relative;
+    top: 50px;
+  }
+
+ 
   
-  .cardoneandtwo, .cardtwoandfour{
+  .cardoneandtwo, .cardtwoandfour, .cardbear{
       border: 1px solid black;
       border-radius: 10%;
       /* background-color: rgba(255, 255, 255, 0.24); */
       background-color: white;
-      cursor: pointer;
-      
-      
+      cursor: pointer;  
+      /* background-color: #3494E6; */
   }
-  .cardbear{
+
+  .cardtwoandfour:hover, .cardoneandtwo:hover, .cardbear:hover{
+    background-color: rgb(243, 243, 243);
+}
+
+.medium{
+  position: relative;
+    top: 50px;
+}
+
+  /* .cardbear{
     border: 1px solid black;
       border-radius: 10%;
-      /* background-color: rgba(255, 255, 255, 0.24); */
+       background-color: rgba(255, 255, 255, 0.24);
       background-color: white;
       cursor: pointer;
-      position: relative;
-      bottom: 40px;
-  }
+  } */
  
-
-  
-  
   .catoP{
       display: flex;
       justify-content: center;
-      width: 100%;
-     
+      width: 100%;  
   }
   
-
-  .randompic{
-    width: 130px;
-    border-bottom: 1px solid black;
-    padding: 10px;
-  }
   .bearpic{
     width: 130px;
     border-bottom: 1px solid black;
@@ -371,15 +388,7 @@ main {
     padding: 10px;
   }
   
-  .cardtwoandfour{
-      position: relative;
-      /* bottom: 40px; */
-  }
-  
-  .cardoneandtwo{
-  position: relative;
-  bottom: 50px;
-  }
+
 
   .newOpacity {
     opacity: 65%;
