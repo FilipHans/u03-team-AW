@@ -1,34 +1,34 @@
-if (localStorage.highscore == undefined) {
-    localStorage.setItem('highscore', 0)
-    localStorage.setItem('highscoreName', "empty")
+// if (localStorage.highscore == undefined) {
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('highscoreName', "empty")
     
-    localStorage.setItem('second', 0)
-    localStorage.setItem('secondName', "empty")
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('secondName', "empty")
     
-    localStorage.setItem('third', 0)
-    localStorage.setItem('thirdName', "empty")
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('thirdName', "empty")
     
-    localStorage.setItem('fourth', 0)
-    localStorage.setItem('fourthName', "empty")
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('fourthName', "empty")
     
-    localStorage.setItem('fifth', 0)
-    localStorage.setItem('fifthName', "empty")
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('fifthName', "empty")
     
-    localStorage.setItem('sixth', 0)
-    localStorage.setItem('sixthName', "empty")
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('sixthName', "empty")
     
-    localStorage.setItem('seventh', 0)
-    localStorage.setItem('seventhName', "empty")
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('seventhName', "empty")
     
-    localStorage.setItem('eighth', 0)
-    localStorage.setItem('eighthName', "empty")
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('eighthName', "empty")
     
-    localStorage.setItem('ninth', 0)
-    localStorage.setItem('ninthName', "empty")
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('ninthName', "empty")
     
-    localStorage.setItem('tenth', 0)
-    localStorage.setItem('tenthName', "empty")
-    }
+//     localStorage.setItem('points0', 0)
+//     localStorage.setItem('tenthName', "empty")
+//     }
 
 const firstPlace = document.querySelector('.first');
 const secondPlace = document.querySelector('.second');
@@ -43,57 +43,100 @@ firstPlace.append(p1);
 secondPlace.append(p2);
 thirdPlace.append(p3);
 
+let newObject;
+
 
 
 export function saveScore () {
-
+    const pointsArray = [];
     const player = {
         name: localStorage.name,
-        points: localStorage.points
-    }
-    const pointsArray = [];
+        points: localStorage.points 
+       }
 
+    const oldPlayers = JSON.parse(localStorage.getItem('all'));
 
-    for (let i = 0; i < 7; i++) {
+    if (oldPlayers !== null) {
+        oldPlayers.forEach(element => {
+    
+            pointsArray.push(element);
 
-        const previousPlayer = {
-            name: `${localStorage.name[i]}`,
-            points: `${localStorage.points[i]}`
-        }
-        pointsArray.push(previousPlayer);
+        })
     }
     
     pointsArray.push(player);
 
+    localStorage.setItem('all', JSON.stringify(pointsArray));
 
-    pointsArray.sort((a,b) => b.points - a.points );
-    pointsArray.splice(7);
+    newObject = JSON.parse(localStorage.getItem('all'));
+    console.log(newObject);
 
-    for (let i = 0; i < pointsArray.length; i++) {
-
-        localStorage.setItem(`points${i}`, pointsArray[i].points);
-        localStorage.setItem(`name${i}`, pointsArray[i].name);
-
-    }
-
+    newObject.sort((a,b) => b.points - a.points );
+    newObject.splice(7);
+    console.log(newObject)
 
 }
 
 export function displayLeaderboard () {
 
-    p1.textContent = `${localStorage.name0} : ${localStorage.points0}`
-    p2.textContent = `${localStorage.name1} : ${localStorage.points1}`
-    p3.textContent = `${localStorage.name2} : ${localStorage.points2}`
+    const arrayLength = newObject.length;
+
+    
+    switch (arrayLength) {
+        case 7:
+            displayYes(7)
+            break;
+        case 6:
+            displayYes(6)
+            break;
+        case 5:
+            displayYes(5)
+            break;
+        case 4:
+            displayYes(4)
+            break;
+        case 3:
+            displayYes(3)
+            break;
+        case 2:
+            displayYes(2)
+            break;
+        case 1:
+            displayYes(1)
+            break;
+    }
 
 
-    playersList.innerHTML = `
-                            <p class="top-players">${localStorage.name3} : ${localStorage.points3} </p>
-                            <p class="top-players">${localStorage.name4} : ${localStorage.points4} </p>
-                            <p class="top-players">${localStorage.name5} : ${localStorage.points5} </p>
-                            <p class="top-players">${localStorage.name6} : ${localStorage.points6} </p>
-                            `;
+    
+    
 
 
+
+
+
+    function displayYes (value) {
+            console.log(value);
+            
+            p1.textContent = `${newObject[0].name} : ${newObject[0].points}`
+
+            if (value >= 2) {
+                p2.textContent = `${newObject[1].name} : ${newObject[1].points}`
+
+            }
+            if (value >= 3) {
+                p3.textContent = `${newObject[2].name} : ${newObject[2].points}`
+
+            }
+            playersList.innerHTML = `
+            <p class="top-players">${value >= 4 ? newObject[3].name : "" } : ${value >= 4 ? newObject[3].points : "" } </p>
+            <p class="top-players">${value >= 5 ? newObject[4].name : "" } : ${value >= 5 ? newObject[4].points : "" } </p>
+            <p class="top-players">${value >= 6 ? newObject[5].name : "" } : ${value >= 6 ? newObject[5].points : "" } </p>
+            <p class="top-players">${value >= 7 ? newObject[6].name : "" } : ${value >= 7 ? newObject[6].points : "" } </p>
+            `;
+            
+        
+
+    }
 
 
 }

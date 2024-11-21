@@ -189,7 +189,13 @@ main {
   box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.2);
   overflow: hidden;
 }
+.hiddenTimer {
+  width: 80vw;
+  max-width: 400px;
+  height: 20px;
+  margin-bottom: 1rem;
 
+}
 .timer_inside {
   width: 100%;
   height: 20px;
@@ -259,7 +265,7 @@ main {
   background-color: rgba(238, 238, 238, 0.6);
 }
 
-.question_button {
+.question_button, .leaderNext {
   margin-top: 1rem;
   font-size: 1.2rem;
   padding: 1rem 5rem;
@@ -273,7 +279,7 @@ main {
   cursor: pointer;
 }
 
-.question_button:hover {
+.question_button:hover, .leaderNext:hover {
   background-color: hsl(29, 77%, 55%);
 }
 
@@ -301,7 +307,6 @@ main {
 
 .catoH2,
 .diffH2 {
-  display: none;
   margin-top: 5vh;
   margin-bottom: 2rem;
   padding: 5px 25px;
@@ -478,14 +483,20 @@ main {
     max-width: none;
     height: 30px;
   }
-
+  .hiddenTimer {
+    width: 600px;
+    max-width: none;
+    height: 30px;
+  
+  }
   .timer_inside {
     width: 100%;
     height: 30px;
   }
 
-  .question_button {
+  .question_button, .leaderNext {
     font-size: 1.5rem;
+  
   }
 
   .start_section {

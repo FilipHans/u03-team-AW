@@ -24,9 +24,11 @@ const answers = document.querySelector(".question");
 const timer = document.querySelector(".timer");
 const timeOut = document.querySelector(".timeOut");
 
-const catoH2 = document.querySelector(".catoH2");
-const diffH2 = document.querySelector(".diffH2");
+// const catoH2 = document.querySelector(".catoH2");
+// const diffH2 = document.querySelector(".diffH2");
 
+const leaderboard = document.querySelector('.leaderboard-container');
+const leaderNext = document.querySelector('.leaderNext');
 
 
 
@@ -39,7 +41,7 @@ import { createBar} from "./createBar.js";
 import {start, end} from "./timer.js";
 import { saveScore, displayLeaderboard } from "./leaderboard.js";
 
-saveScore();
+
 
 let categoryChoice = "";
 let difficulty = "";
@@ -57,12 +59,17 @@ inputName.addEventListener("keyup", () => {
     }
 })
 
+leaderNext.addEventListener('click', () => {
+    leaderboard.style.display = 'none';
+    firstSection.style.display = 'block';
+})
+
 userForm.addEventListener("submit", (event) => {
     event.preventDefault();
     localStorage.setItem("name", inputName.value);
     firstSection.style.display = "none";
     category.style.display = "flex";
-    catoH2.style.display = "flex";
+    // catoH2.style.display = "flex";
     
 });
 
@@ -70,33 +77,33 @@ geographyCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "22";
-    catoH2.style.display = "none";
-    diffH2.style.display = "flex";
+    // catoH2.style.display = "none";
+    // diffH2.style.display = "flex";
 });
 
 moviesCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "11";
-    catoH2.style.display = "none";
-    diffH2.style.display = "flex";
+    // catoH2.style.display = "none";
+    // diffH2.style.display = "flex";
 
 });
 musicCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "12";
-    catoH2.style.display = "none";
-    diffH2.style.display = "flex";
+    // catoH2.style.display = "none";
+    // diffH2.style.display = "flex";
 
 });
 randomCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "0";
-    catoH2.style.display = "none";
-    diffH2.style.display = "flex";
-
+    // catoH2.style.display = "none";
+    // diffH2.style.display = "flex";
+// 
 });
 
 easy.addEventListener("click", () => {
@@ -104,9 +111,8 @@ easy.addEventListener("click", () => {
     difficulty = "easy";
 
     start();
-    createBar();
     runner(categoryChoice, difficulty);
-    diffH2.style.display = "none";
+    // diffH2.style.display = "none";
 
 });
 medium.addEventListener("click", () => {
@@ -114,9 +120,8 @@ medium.addEventListener("click", () => {
     difficulty = "medium";
 
     start();
-    createBar();
     runner(categoryChoice, difficulty);
-    diffH2.style.display = "none";
+    // diffH2.style.display = "none";
 
 });
 hard.addEventListener("click", () => {
@@ -124,9 +129,8 @@ hard.addEventListener("click", () => {
     difficulty = "hard";
 
     start();
-    createBar();
     runner(categoryChoice, difficulty);
-    diffH2.style.display = "none";
+    // diffH2.style.display = "none";
 
 });
 
@@ -139,13 +143,16 @@ questionBtn.addEventListener("click", () => {
     quizDisplay(quizData.results);
     }
     else {
+
         const endTime = end();
-        console.log(endTime)
         pointsTracker = Math.floor(pointsTracker / endTime);
-        localStorage.setItem('points', pointsTracker)
-        console.log(pointsTracker);
+        localStorage.setItem('points', pointsTracker);
+
+        saveScore();
+        displayLeaderboard();
+
         questionDiv.style.display = 'none';
-        category.style.display = 'flex';
+        leaderboard.style.display = 'block';
     }
     
 });
@@ -166,12 +173,16 @@ async function quizGetter(categoryChoice, difficulty) {
 }
 
 async function runner(categoryChoice, difficulty) {
+
+    roundTracker = 0;
     desktopVersion.style.display = "none";
     difficultyLevel.style.display = "none";
     questionDiv.style.display = "flex";
 
     quizData = await quizGetter(categoryChoice, difficulty);
+    createBar();
     quizDisplay(quizData.results);
+
 }
 
 function quizDisplay(data) {
@@ -228,7 +239,7 @@ function colorizer(newLiList, correctAnswer) {
 }
 
 function produceResult (element, event, correctAnswer, randomizer) {
-    timeOut.innerHTML = ``;
+    timeOut.innerHTML = `<div class="hiddenTimer"></div>`;
     questionBtn.disabled = false;
 
     clearTimeout(myTimer);
@@ -262,7 +273,7 @@ function slowPoke (element, event, answer, randomizer) {
     timer.classList.remove("timer");
 
     produceResult(element, event, answer, randomizer)
-    timeOut.innerHTML = `<h2>Too slow!</h2>`
+    timeOut.innerHTML = `<div class="hiddenTimer"><h2>Too slow!</h2></div>`
 
 
 }
