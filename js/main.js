@@ -28,6 +28,8 @@ const catoH2 = document.querySelector(".catoH2");
 const diffH2 = document.querySelector(".diffH2");
 
 
+
+
 const desktopVersion = document.querySelector(".desktop_version");
 
 
@@ -35,6 +37,9 @@ const desktopVersion = document.querySelector(".desktop_version");
 import { shuffle } from "./shuffle.js";
 import { createBar} from "./createBar.js";
 import {start, end} from "./timer.js";
+import { saveScore, displayLeaderboard } from "./leaderboard.js";
+
+saveScore();
 
 let categoryChoice = "";
 let difficulty = "";
