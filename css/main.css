@@ -292,7 +292,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  width: 307px;
+  width: 310px;
 }
 
 .difficultlevel .allcardsDiv {
@@ -389,7 +389,7 @@ main {
 
   .allcardsDiv {
     gap: 40px;
-    width: 367px;
+    width: 370px;
   }
 
   .catoH2,
