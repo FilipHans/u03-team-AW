@@ -29,13 +29,22 @@ body {
   width: 80vw;
   max-width: 600px;
   height: auto;
-  background-color: var(--background-color-light);
   align-items: center;
   justify-content: center;
   margin: auto;
   color: var(--text-color);
   display: none;
 }
+
+.leaderboard {
+  background-color: var(--background-color-light);
+}
+
+.playAgainDiv {
+  display: flex;
+  justify-content: center;
+}
+
 .top-3 {
   background-color: var(--background-color-dark);
   padding: 1.5rem;
@@ -283,6 +292,10 @@ main {
   box-shadow: 2px 2px 5px hsl(0, 0%, 0%);
   border: none;
   cursor: pointer;
+}
+
+.leaderNext {
+  padding: 1rem 3rem;
 }
 
 .question_button:hover, .leaderNext:hover {
