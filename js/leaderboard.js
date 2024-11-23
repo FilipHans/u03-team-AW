@@ -44,7 +44,7 @@ secondPlace.append(p2);
 thirdPlace.append(p3);
 
 let newObject;
-
+let tempArr;
 
 
 export function saveScore () {
@@ -116,27 +116,31 @@ export function displayLeaderboard () {
 
     function displayYes (value) {
             console.log(value);
-            
+            playersList.innerHTML = "";
             p1.textContent = `${newObject[0].name} : ${newObject[0].points}`
 
             if (value >= 2) {
                 p2.textContent = `${newObject[1].name} : ${newObject[1].points}`
-
             }
             if (value >= 3) {
                 p3.textContent = `${newObject[2].name} : ${newObject[2].points}`
-
             }
-            playersList.innerHTML = `
-            <p class="top-players">${value >= 4 ? newObject[3].name : "" } : ${value >= 4 ? newObject[3].points : "" } </p>
-            <p class="top-players">${value >= 5 ? newObject[4].name : "" } : ${value >= 5 ? newObject[4].points : "" } </p>
-            <p class="top-players">${value >= 6 ? newObject[5].name : "" } : ${value >= 6 ? newObject[5].points : "" } </p>
-            <p class="top-players">${value >= 7 ? newObject[6].name : "" } : ${value >= 7 ? newObject[6].points : "" } </p>
-            `;
-            
-        
-
+            if (value >= 4) {
+                tempArr = newObject.filter(player => parseInt(player.points) < parseInt(newObject[2].points));
+                playersList.innerHTML = tempArr.map(player => `<p class="top-players">${player.name} : ${player.points} </p>`).join("");
+                if (value < 7) { 
+                    for (let i = 7 - value; i > 0; i--) {
+                        const emptyP = document.createElement("p");
+                        emptyP.classList = "top-players";
+                        playersList.appendChild(emptyP);
+                    }
+                }
+            } else if (value < 4) {
+                    for (let i = 0; i < 4; i++) {
+                        const emptyP = document.createElement("p");
+                        emptyP.classList = "top-players";
+                        playersList.appendChild(emptyP);
+                    }
+            };
     }
-
-
 }
