@@ -51,6 +51,22 @@ let pointsTracker = 0;
 let difficultyPoints;
 let myTimer;
 
+let activeTracker = false;
+
+window.addEventListener('resize', () => {
+
+    if (activeTracker == false) {
+        if (window.innerWidth < 1024) {
+            desktopVersion.style.display = 'none';
+        }
+        if (window.innerWidth > 1024) {
+            desktopVersion.style.display = 'block';
+        }
+    }
+
+
+})
+
 inputName.addEventListener("keyup", () => {
     if (inputName.value.length > 0) {
         startBtn.disabled = false;
@@ -64,6 +80,7 @@ leaderNext.addEventListener('click', () => {
     firstSection.style.display = 'block';
     desktopVersion.style.display = 'block';
     inputName.value = '';
+    activeTracker = false;
 })
 
 userForm.addEventListener("submit", (event) => {
@@ -132,7 +149,7 @@ questionBtn.addEventListener("click", () => {
     quizDisplay(quizData.results);
     }
     else {
-
+        
         const endTime = end();
         pointsTracker = Math.floor(pointsTracker / endTime);
         localStorage.setItem('points', pointsTracker);
@@ -167,7 +184,7 @@ async function runner(categoryChoice, difficulty) {
     desktopVersion.style.display = "none";
     difficultyLevel.style.display = "none";
     questionDiv.style.display = "flex";
-
+    activeTracker = true;
     quizData = await quizGetter(categoryChoice, difficulty);
     createBar();
     quizDisplay(quizData.results);
