@@ -62,6 +62,8 @@ inputName.addEventListener("keyup", () => {
 leaderNext.addEventListener('click', () => {
     leaderboard.style.display = 'none';
     firstSection.style.display = 'block';
+    desktopVersion.style.display = 'block';
+    inputName.value = '';
 })
 
 userForm.addEventListener("submit", (event) => {
@@ -69,7 +71,6 @@ userForm.addEventListener("submit", (event) => {
     localStorage.setItem("name", inputName.value);
     firstSection.style.display = "none";
     category.style.display = "flex";
-    // catoH2.style.display = "flex";
     
 });
 
@@ -77,33 +78,24 @@ geographyCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "22";
-    // catoH2.style.display = "none";
-    // diffH2.style.display = "flex";
 });
 
 moviesCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "11";
-    // catoH2.style.display = "none";
-    // diffH2.style.display = "flex";
 
 });
 musicCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "12";
-    // catoH2.style.display = "none";
-    // diffH2.style.display = "flex";
 
 });
 randomCategory.addEventListener("click", () => {
     difficultyLevel.style.display = "flex";
     category.style.display = "none";
     categoryChoice = "0";
-    // catoH2.style.display = "none";
-    // diffH2.style.display = "flex";
-// 
 });
 
 easy.addEventListener("click", () => {
@@ -112,7 +104,6 @@ easy.addEventListener("click", () => {
 
     start();
     runner(categoryChoice, difficulty);
-    // diffH2.style.display = "none";
 
 });
 medium.addEventListener("click", () => {
@@ -121,7 +112,6 @@ medium.addEventListener("click", () => {
 
     start();
     runner(categoryChoice, difficulty);
-    // diffH2.style.display = "none";
 
 });
 hard.addEventListener("click", () => {
@@ -130,7 +120,6 @@ hard.addEventListener("click", () => {
 
     start();
     runner(categoryChoice, difficulty);
-    // diffH2.style.display = "none";
 
 });
 
