@@ -78,7 +78,10 @@ inputName.addEventListener("keyup", () => {
 leaderNext.addEventListener('click', () => {
     leaderboard.style.display = 'none';
     firstSection.style.display = 'block';
+    startBtn.disabled = true;
+    if (window.innerWidth > 1024) {
     desktopVersion.style.display = 'block';
+    }
     inputName.value = '';
     activeTracker = false;
 })
@@ -144,7 +147,6 @@ questionBtn.addEventListener("click", () => {
 
     if (roundTracker < 9) {
     roundTracker++;
-    timeOut.innerHTML = '<div class="timer"><div class="timer_inside"></div></div>'
     createBar();
     quizDisplay(quizData.results);
     }
