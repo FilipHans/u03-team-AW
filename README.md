@@ -1,13 +1,14 @@
 # Quizzy 
 
-** Creators:
-{
-    Andréa Stålstierna,
-    Erik Andersson,
-    Emil Rönnqvist,
-    Filip Hansén,
-    Hanna Österberg
-}**
+#### **Creators:**
+**{**
+ * **Andréa Stålstierna**,
+ * **Erik Andersson**,
+ * **Emil Rönnqvist**,
+ * **Filip Hansén**,
+ * **Hanna Österberg**
+
+**}**
 
 Vi har gjort en quiz-applikation med namn Quizzy, där vi hämtat data från ett API. Direkt när man kommer till sidan så får man skriva in sitt namn, som kommer sparas i localstorage. När man skrivit in sitt namn så kommer man att få välja kategori och svårighetsgrad. Vi har valt att visa 3 kategorier och en random kategori från API:et som användaren får välja mellan. Efter man valt kategori, väljer man svårighetsgrad, “easy, “medium” eller “hard”. Sen startar quizet!
 
@@ -22,5 +23,6 @@ Det vi märkte under arbetets gång var att Api:et repeterar frågor under alla 
 
 För att sammanfatta tycker vi att projektet har gått bra och vi är nöjda över vår app. 
 
-API:et - * <https://opentdb.com/api_config.php>
-Länk till Quizappen - * <https://filiphans.github.io/u03-team-AW/>
+**Länk till API:et** - <https://opentdb.com/api_config.php>
+
+**Länk till Quizappen** - <https://filiphans.github.io/u03-team-AW/>
