@@ -110,6 +110,16 @@ header {
   padding: 0rem;
 }
 
+header h1{
+  text-align: start;
+}
+
+header h1 img{
+  width: 200px;
+  height: auto;
+  margin: 1rem 1rem 0rem 1rem;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -427,11 +437,23 @@ main {
 }
 
 @media (min-width: 1024px) {
+
+  header{
+    height: 50px;
+  }
+
+  header h1 img{
+    width: 250px;
+    height: auto;
+    margin: 1.5rem 1rem 0rem 2rem;
+  }
+
+
   .allcards,
   .difficultlevel {
     position: absolute;
     right: 10vw;
-    margin-top: 4vh;
+    margin-top: 0vh;
   }
 
   .allcardsDiv {
@@ -524,7 +546,7 @@ main {
 
   .start_section {
     /* border: none; */
-    margin-top: 20vh;
+    margin-top: 15vh;
     position: absolute;
     width: 40vw;
     max-width: 600px;
@@ -541,7 +563,7 @@ main {
 
   .desktop_version {
     display: block;
-    margin-top: 35vh;
+    margin-top: 28vh;
     position: absolute;
     width: 40vw;
     max-width: 600px;
