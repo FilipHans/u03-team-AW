@@ -23,6 +23,6 @@ Det vi märkte under arbetets gång var att Api:et repeterar frågor under alla 
 
 För att sammanfatta tycker vi att projektet har gått bra och vi är nöjda över vår app. 
 
-Länk till API:et - <https://opentdb.com/api_config.php>
+**Länk till API:et** - <https://opentdb.com/api_config.php>
 
-Länk till Quizappen - <https://filiphans.github.io/u03-team-AW/>
+**Länk till Quizappen** - <https://filiphans.github.io/u03-team-AW/>
