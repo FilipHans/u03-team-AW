@@ -1,6 +1,6 @@
 # Quizzy 
 
-##### **Creators:**
+#### **Creators:**
 **{**
  * **Andréa Stålstierna**,
  * **Erik Andersson**,
