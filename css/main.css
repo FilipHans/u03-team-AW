@@ -8,7 +8,7 @@
 :root {
   --text-color: rgb(253, 216, 253);
   --background-color-light: rgba(238, 197, 255, 0.241);
-  --background-color-dark: rgba(128, 0, 128, 0.204);
+  --background-color-dark: rgba(128, 0, 128, 0.227);
 }
 
 body {
@@ -32,12 +32,13 @@ body {
   align-items: center;
   justify-content: center;
   margin: auto;
-  color: var(--text-color);
+  color: #fff;
   display: none;
 }
 
 .leaderboard {
-  background-color: var(--background-color-light);
+  /* background-color: var(--background-color-light); */
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
 }
 
 .playAgainDiv {
@@ -74,6 +75,8 @@ body {
   border-top-left-radius: 6rem;
   border-top-right-radius: 6rem;
   background-color: var(--background-color-light);
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
+
 }
 
 .top-players {
@@ -82,6 +85,7 @@ body {
   padding: 0.5rem;
   text-align: center;
   min-height: 40px;
+  box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.2);
 }
 
 @media (min-width: 768px) {
@@ -101,7 +105,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(153, 130, 175);
+
 }
 
 header {
@@ -574,5 +578,9 @@ main {
     font-weight: 800;
     color: #fff;
     text-shadow: 1px 1px 5px #000;
+  }
+
+  .leaderboard-container{
+    margin-top: 5vh;
   }
 }
