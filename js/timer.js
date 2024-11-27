@@ -1,8 +1,6 @@
 export var startTime, endTime;
-
 export function start() {
-    startTime = performance.now();
-    
+    startTime = performance.now();  
 };
 
 export function end() {

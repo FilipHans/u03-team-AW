@@ -1,35 +1,3 @@
-// if (localStorage.highscore == undefined) {
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('highscoreName', "empty")
-    
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('secondName', "empty")
-    
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('thirdName', "empty")
-    
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('fourthName', "empty")
-    
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('fifthName', "empty")
-    
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('sixthName', "empty")
-    
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('seventhName', "empty")
-    
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('eighthName', "empty")
-    
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('ninthName', "empty")
-    
-//     localStorage.setItem('points0', 0)
-//     localStorage.setItem('tenthName', "empty")
-//     }
-
 const firstPlace = document.querySelector('.first');
 const secondPlace = document.querySelector('.second');
 const thirdPlace = document.querySelector('.third');
@@ -52,7 +20,7 @@ export function saveScore () {
     const player = {
         name: localStorage.name,
         points: localStorage.points 
-       }
+    }
 
     const oldPlayers = JSON.parse(localStorage.getItem('all'));
 
@@ -74,11 +42,9 @@ export function saveScore () {
     newObject.sort((a,b) => b.points - a.points );
     newObject.splice(7);
     console.log(newObject)
-
 }
 
 export function displayLeaderboard () {
-
     const arrayLength = newObject.length;
 
     
@@ -105,14 +71,6 @@ export function displayLeaderboard () {
             displayYes(1)
             break;
     }
-
-
-    
-    
-
-
-
-
 
     function displayYes (value) {
             console.log(value);

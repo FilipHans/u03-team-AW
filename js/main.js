@@ -24,24 +24,15 @@ const answers = document.querySelector(".question");
 const timer = document.querySelector(".timer");
 const timeOut = document.querySelector(".timeOut");
 
-// const catoH2 = document.querySelector(".catoH2");
-// const diffH2 = document.querySelector(".diffH2");
-
 const leaderboard = document.querySelector('.leaderboard-container');
 const leaderNext = document.querySelector('.leaderNext');
 
-
-
 const desktopVersion = document.querySelector(".desktop_version");
-
-
 
 import { shuffle } from "./shuffle.js";
 import { createBar} from "./createBar.js";
 import {start, end} from "./timer.js";
 import { saveScore, displayLeaderboard } from "./leaderboard.js";
-
-
 
 let categoryChoice = "";
 let difficulty = "";
@@ -50,7 +41,6 @@ let quizData;
 let pointsTracker = 0;
 let difficultyPoints;
 let myTimer;
-
 let activeTracker = false;
 
 window.addEventListener('resize', () => {
@@ -63,8 +53,6 @@ window.addEventListener('resize', () => {
             desktopVersion.style.display = 'block';
         }
     }
-
-
 })
 
 inputName.addEventListener("keyup", () => {
@@ -232,8 +220,8 @@ function quizDisplay(data) {
 
         });
     });
-
 }
+
 function colorizer(newLiList, correctAnswer) {
     for (let i = 0; i < newLiList.length; i++) {
         
@@ -273,8 +261,7 @@ colorizer(newLiList, correctAnswer);
     } else {
         console.log(`Filip > Emil!`);
     }
-}
-}
+}}
 
 function slowPoke (element, event, answer, randomizer) {
 
@@ -282,8 +269,6 @@ function slowPoke (element, event, answer, randomizer) {
 
     produceResult(element, event, answer, randomizer)
     timeOut.innerHTML = `<div class="hiddenTimer"><h2>Too slow!</h2></div>`
-
-
 }
 
 function answerDecoder (answer) {
